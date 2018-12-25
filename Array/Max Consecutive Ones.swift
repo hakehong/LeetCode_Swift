@@ -26,3 +26,26 @@ class Solution {
         return arr.max() ?? 0
     }
 }
+
+/** 以下是大佬的 **/
+class MaxConsecutiveOnes {
+    func findMaxConsecutiveOnes(_ nums: [Int]) -> Int {
+        var globalMax = 0, localMax = 0
+        
+        for num in nums {
+            if num == 1 {
+                localMax += 1
+                globalMax = max(globalMax, localMax)
+            } else {
+                localMax = 0
+            }
+        }
+        
+        return globalMax
+    }
+}
+
+//总计
+/**
+ * 这道题我不应该在加入数组去处理
+ */
